@@ -1,0 +1,7 @@
+# Coruna iOS - Mihari Threat Research - TLP:CLEAR
+# tipo<TAB>valor (sin defang)
+string	{"cmd":"logmsg","args":{"msg":"%s"}}
+file_path	/usr/libexec/corelliumd
+string	SANDBOX_CHECK_NO_REPORT
+string	IOSurfaceRoot
+string	expand 32-byte k

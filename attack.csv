@@ -1,0 +1,7 @@
+matrix,tactic,technique_id,technique,evidence,status
+mobile,Discovery,T1426,System Information Discovery,"hw.model, version de iOS, uname",observed
+mobile,Defense Evasion,T1633.001,Virtualization/Sandbox Evasion: System Checks,"Corellium, kern.bootargs, HOST_CAN_HAS_DEBUGGER, hw.l2cachesize, SANDBOX_CHECK_NO_REPORT",observed
+mobile,Command and Control,T1437.001,Application Layer Protocol: Web Protocols,HTTP/HTTPS con JSON (logmsg),observed
+mobile,Command and Control,T1521.001,Encrypted Channel: Symmetric Cryptography,ChaCha20 (expand 32-byte k),inferred
+mobile,Defense Evasion,T1407,Download New Code at Runtime,"payload .min.js, sys_icache_invalidate, sys_dcache_flush",inferred
+mobile,Privilege Escalation,T1404,Exploitation for Privilege Escalation,Otras etapas de la cadena Coruna,context

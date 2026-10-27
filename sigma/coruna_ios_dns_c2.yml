@@ -1,0 +1,20 @@
+title: Coruna iOS - Resolucion DNS del C2 token.info.pl
+id: 7b2d9e14-3c6f-4a81-b2d7-5e8f9a0b1c72
+status: experimental
+description: Detecta consultas DNS al dominio C2 observado en la configuracion de carga del modulo Coruna para iOS.
+references:
+    - https://mihari-intelligence.blogspot.com/2026/10/desmontando-coruna-analisis-modulo-exploit-ios-bypass-pac.html
+author: Mihari Threat Research
+date: 2026-10-12
+tags:
+    - attack.command-and-control
+    - attack.t1071.004
+logsource:
+    category: dns
+detection:
+    selection:
+        query|endswith: 'token.info.pl'
+    condition: selection
+falsepositives:
+    - Ninguno conocido.
+level: high

@@ -1,0 +1,22 @@
+title: Coruna iOS - User-Agent MobileStore/1.0
+id: 9e3a1f57-6d2b-4c90-a8e4-2f7b6c5d4e83
+status: experimental
+description: |
+    Detecta el User-Agent fijo MobileStore/1.0 usado por el modulo Coruna para su beacon HTTP.
+    Solo visible en trafico HTTP en claro o con inspeccion TLS; el modulo admite http:// y https://.
+references:
+    - https://mihari-intelligence.blogspot.com/2026/10/desmontando-coruna-analisis-modulo-exploit-ios-bypass-pac.html
+author: Mihari Threat Research
+date: 2026-10-12
+tags:
+    - attack.command-and-control
+    - attack.t1071.001
+logsource:
+    category: proxy
+detection:
+    selection:
+        c-useragent: 'MobileStore/1.0'
+    condition: selection
+falsepositives:
+    - Aplicaciones internas que usen ese User-Agent literal. Revisar destino y dispositivo.
+level: medium

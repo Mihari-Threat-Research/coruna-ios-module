@@ -1,0 +1,5 @@
+# Coruna iOS - Mihari Threat Research - TLP:CLEAR
+# tipo<TAB>valor (sin defang)
+sha256	c1e0dcedab24b0bdb3278a240b00d2ac4239f1aee4d0932cbc9325000dabe021
+md5	de155c14985463939a02a7260d3e63fc
+macho_uuid	41d39e20-04a3-35f4-ac13-f6b200260386

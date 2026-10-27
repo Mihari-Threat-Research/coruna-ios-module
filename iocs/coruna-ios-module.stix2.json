@@ -1,0 +1,250 @@
+{
+  "type": "bundle",
+  "id": "bundle--a2400ccb-cb38-50b9-bda8-9f698d8eb29f",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--e981ab8a-df7a-5b27-8842-38f8503abb3f",
+      "created": "2026-10-27T00:00:00.000Z",
+      "modified": "2026-10-27T00:00:00.000Z",
+      "name": "Mihari Threat Research",
+      "identity_class": "organization",
+      "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d77e50c9-ae81-5316-aba2-94b15430fe53",
+      "created_by_ref": "identity--e981ab8a-df7a-5b27-8842-38f8503abb3f",
+      "created": "2026-10-10T00:00:00.000Z",
+      "modified": "2026-10-10T00:00:00.000Z",
+      "valid_from": "2026-10-10T00:00:00.000Z",
+      "name": "coruna-ios-module: sha256",
+      "description": "Volcado de memoria con modulo Coruna (Mach-O ARM64 + config de carga)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'SHA-256' = 'c1e0dcedab24b0bdb3278a240b00d2ac4239f1aee4d0932cbc9325000dabe021']",
+      "pattern_type": "stix",
+      "confidence": 85,
+      "labels": [
+        "coruna-ios-module"
+      ],
+      "external_references": [
+        {
+          "source_name": "Mihari Intelligence Blog",
+          "url": "https://mihari-intelligence.blogspot.com/"
+        }
+      ],
+      "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--719f50ca-da87-5841-8286-bfc17a40eb74",
+      "created_by_ref": "identity--e981ab8a-df7a-5b27-8842-38f8503abb3f",
+      "created": "2026-10-10T00:00:00.000Z",
+      "modified": "2026-10-10T00:00:00.000Z",
+      "valid_from": "2026-10-10T00:00:00.000Z",
+      "name": "coruna-ios-module: md5",
+      "description": "Volcado de memoria con modulo Coruna",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'MD5' = 'de155c14985463939a02a7260d3e63fc']",
+      "pattern_type": "stix",
+      "confidence": 85,
+      "labels": [
+        "coruna-ios-module"
+      ],
+      "external_references": [
+        {
+          "source_name": "Mihari Intelligence Blog",
+          "url": "https://mihari-intelligence.blogspot.com/"
+        }
+      ],
+      "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--207eaa00-5f95-5b33-90bb-e80641cd7a62",
+      "created_by_ref": "identity--e981ab8a-df7a-5b27-8842-38f8503abb3f",
+      "created": "2026-10-10T00:00:00.000Z",
+      "modified": "2026-10-10T00:00:00.000Z",
+      "valid_from": "2026-10-10T00:00:00.000Z",
+      "name": "coruna-ios-module: domain",
+      "description": "Servidor de distribucion / C2 en la configuracion de carga",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[domain-name:value = 'c2.token.info.pl']",
+      "pattern_type": "stix",
+      "confidence": 85,
+      "labels": [
+        "coruna-ios-module"
+      ],
+      "external_references": [
+        {
+          "source_name": "Mihari Intelligence Blog",
+          "url": "https://mihari-intelligence.blogspot.com/"
+        }
+      ],
+      "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--5bd28107-3229-52ba-b52b-603559e0102e",
+      "created_by_ref": "identity--e981ab8a-df7a-5b27-8842-38f8503abb3f",
+      "created": "2026-10-10T00:00:00.000Z",
+      "modified": "2026-10-10T00:00:00.000Z",
+      "valid_from": "2026-10-10T00:00:00.000Z",
+      "name": "coruna-ios-module: url",
+      "description": "Pagina de entrega (patron group.html de Coruna)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = 'https://c2.token.info.pl/group.html']",
+      "pattern_type": "stix",
+      "confidence": 85,
+      "labels": [
+        "coruna-ios-module"
+      ],
+      "external_references": [
+        {
+          "source_name": "Mihari Intelligence Blog",
+          "url": "https://mihari-intelligence.blogspot.com/"
+        }
+      ],
+      "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--4b0c1112-0214-59a2-a433-6283a564b8dc",
+      "created_by_ref": "identity--e981ab8a-df7a-5b27-8842-38f8503abb3f",
+      "created": "2026-10-10T00:00:00.000Z",
+      "modified": "2026-10-10T00:00:00.000Z",
+      "valid_from": "2026-10-10T00:00:00.000Z",
+      "name": "coruna-ios-module: url",
+      "description": "Etapa siguiente servida como <sha1>.min.js",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[url:value = 'https://c2.token.info.pl/7a7d99099b035b2c6512b6ebeeea6df1ede70fbb.min.js']",
+      "pattern_type": "stix",
+      "confidence": 85,
+      "labels": [
+        "coruna-ios-module"
+      ],
+      "external_references": [
+        {
+          "source_name": "Mihari Intelligence Blog",
+          "url": "https://mihari-intelligence.blogspot.com/"
+        }
+      ],
+      "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--2653aa0e-bc9f-5c49-ba17-0b09a689cd45",
+      "created_by_ref": "identity--e981ab8a-df7a-5b27-8842-38f8503abb3f",
+      "created": "2026-10-10T00:00:00.000Z",
+      "modified": "2026-10-10T00:00:00.000Z",
+      "valid_from": "2026-10-10T00:00:00.000Z",
+      "name": "coruna-ios-module: user_agent",
+      "description": "User-Agent del beacon HTTP del modulo y selector de modo",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:extensions.'http-request-ext'.request_header.'User-Agent' = 'MobileStore/1.0']",
+      "pattern_type": "stix",
+      "confidence": 60,
+      "labels": [
+        "coruna-ios-module"
+      ],
+      "external_references": [
+        {
+          "source_name": "Mihari Intelligence Blog",
+          "url": "https://mihari-intelligence.blogspot.com/"
+        }
+      ],
+      "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--5c8e7e5c-8e6a-5151-954e-29bcf3d901ce",
+      "created_by_ref": "identity--e981ab8a-df7a-5b27-8842-38f8503abb3f",
+      "created": "2026-10-10T00:00:00.000Z",
+      "modified": "2026-10-10T00:00:00.000Z",
+      "valid_from": "2026-10-10T00:00:00.000Z",
+      "name": "coruna-ios-module: user_agent",
+      "description": "User-Agent de Safari iOS 15 usado en la descarga (UA legitimo; usar solo en correlacion)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[network-traffic:extensions.'http-request-ext'.request_header.'User-Agent' = 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_8_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.6 Mobile/15E148 Safari/604.1']",
+      "pattern_type": "stix",
+      "confidence": 30,
+      "labels": [
+        "coruna-ios-module"
+      ],
+      "external_references": [
+        {
+          "source_name": "Mihari Intelligence Blog",
+          "url": "https://mihari-intelligence.blogspot.com/"
+        }
+      ],
+      "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--3efc7d35-544c-5e08-86dd-752529349f6a",
+      "created_by_ref": "identity--e981ab8a-df7a-5b27-8842-38f8503abb3f",
+      "created": "2026-10-10T00:00:00.000Z",
+      "modified": "2026-10-10T00:00:00.000Z",
+      "valid_from": "2026-10-10T00:00:00.000Z",
+      "name": "coruna-ios-module: file_path",
+      "description": "Comprobacion de entorno Corellium",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:name = 'corelliumd']",
+      "pattern_type": "stix",
+      "confidence": 60,
+      "labels": [
+        "coruna-ios-module"
+      ],
+      "external_references": [
+        {
+          "source_name": "Mihari Intelligence Blog",
+          "url": "https://mihari-intelligence.blogspot.com/"
+        }
+      ],
+      "object_marking_refs": [
+        "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487"
+      ]
+    }
+  ]
+}

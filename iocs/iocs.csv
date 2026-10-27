@@ -1,0 +1,14 @@
+type,value,context,confidence,first_seen
+sha256,c1e0dcedab24b0bdb3278a240b00d2ac4239f1aee4d0932cbc9325000dabe021,Volcado de memoria con modulo Coruna (Mach-O ARM64 + config de carga),high,2026-10-10
+md5,de155c14985463939a02a7260d3e63fc,Volcado de memoria con modulo Coruna,high,2026-10-10
+macho_uuid,41d39e20-04a3-35f4-ac13-f6b200260386,UUID LC_UUID del Mach-O del modulo,high,2026-10-10
+domain,c2.token.info.pl,Servidor de distribucion / C2 en la configuracion de carga,high,2026-10-10
+url,https://c2.token.info.pl/group.html,Pagina de entrega (patron group.html de Coruna),high,2026-10-10
+url,https://c2.token.info.pl/7a7d99099b035b2c6512b6ebeeea6df1ede70fbb.min.js,Etapa siguiente servida como <sha1>.min.js,high,2026-10-10
+user_agent,MobileStore/1.0,User-Agent del beacon HTTP del modulo y selector de modo,medium,2026-10-10
+user_agent,"Mozilla/5.0 (iPhone; CPU iPhone OS 15_8_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.6 Mobile/15E148 Safari/604.1",User-Agent de Safari iOS 15 usado en la descarga (UA legitimo; usar solo en correlacion),low,2026-10-10
+string,"{""cmd"":""logmsg"",""args"":{""msg"":""%s""}}",Plantilla JSON del comando logmsg al C2,high,2026-10-10
+file_path,/usr/libexec/corelliumd,Comprobacion de entorno Corellium,medium,2026-10-10
+string,SANDBOX_CHECK_NO_REPORT,Comprobacion silenciosa del sandbox antes de iokit-open-service,medium,2026-10-10
+string,IOSurfaceRoot,Servicio IOKit objetivo,low,2026-10-10
+string,expand 32-byte k,Constante de ChaCha20 (etapa siguiente cifrada; inferido),low,2026-10-10

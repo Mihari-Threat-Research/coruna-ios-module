@@ -1,0 +1,27 @@
+title: Coruna iOS - Patron de entrega group.html y payload .min.js desde iPhone
+id: c5d8b2a0-1e4f-4b67-9d3c-8a7e6f5b4c94
+status: experimental
+description: |
+    Busqueda (hunting) del patron de entrega del kit Coruna: pagina group.html seguida de un payload
+    cuyo nombre es un hash SHA-1 hexadecimal con extension .min.js, solicitado desde Safari en iPhone.
+references:
+    - https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit
+    - https://mihari-intelligence.blogspot.com/2026/10/desmontando-coruna-analisis-modulo-exploit-ios-bypass-pac.html
+author: Mihari Threat Research
+date: 2026-10-12
+tags:
+    - attack.initial-access
+    - attack.t1189
+logsource:
+    category: proxy
+detection:
+    selection_ua:
+        c-useragent|contains: 'iPhone'
+    selection_payload:
+        c-uri|re: '/[0-9a-f]{40}\.min\.js$'
+    selection_landing:
+        c-uri|endswith: '/group.html'
+    condition: selection_ua and (selection_payload or selection_landing)
+falsepositives:
+    - Sitios legitimos con una pagina group.html. Correlacionar con la reputacion del dominio.
+level: low

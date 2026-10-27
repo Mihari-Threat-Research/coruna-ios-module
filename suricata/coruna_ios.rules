@@ -1,0 +1,14 @@
+# Mihari Threat Research - Coruna iOS (TLP:CLEAR) - 2026-10-12
+# Ref: https://mihari-intelligence.blogspot.com/2026/10/desmontando-coruna-analisis-modulo-exploit-ios-bypass-pac.html
+# Hash: c1e0dcedab24b0bdb3278a240b00d2ac4239f1aee4d0932cbc9325000dabe021
+# SID 1000101-1000105 (bloque Coruna: 1000101-1000199)
+
+alert dns $HOME_NET any -> any any (msg:"MIHARI Coruna iOS - DNS query a C2 token.info.pl"; dns.query; dotprefix; content:".token.info.pl"; endswith; nocase; classtype:trojan-activity; sid:1000101; rev:1; metadata:author Mihari_Threat_Research, created_at 2026_10_12, confidence High;)
+
+alert tls $HOME_NET any -> $EXTERNAL_NET any (msg:"MIHARI Coruna iOS - TLS SNI hacia C2 token.info.pl"; flow:established,to_server; tls.sni; dotprefix; content:".token.info.pl"; endswith; nocase; classtype:trojan-activity; sid:1000102; rev:1; metadata:author Mihari_Threat_Research, created_at 2026_10_12, confidence High;)
+
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"MIHARI Coruna iOS - HTTP Host C2 token.info.pl"; flow:established,to_server; http.host; dotprefix; content:".token.info.pl"; endswith; nocase; classtype:trojan-activity; sid:1000103; rev:1; metadata:author Mihari_Threat_Research, created_at 2026_10_12, confidence High;)
+
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"MIHARI Coruna iOS - User-Agent MobileStore/1.0 hacia host no Apple"; flow:established,to_server; http.user_agent; content:"MobileStore/1.0"; bsize:15; http.host; content:!"apple.com"; endswith; classtype:trojan-activity; sid:1000104; rev:1; metadata:author Mihari_Threat_Research, created_at 2026_10_12, confidence Medium;)
+
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"MIHARI Coruna iOS - Descarga de payload SHA1.min.js desde iPhone (hunting)"; flow:established,to_server; http.method; content:"GET"; http.uri; pcre:"/\/[0-9a-f]{40}\.min\.js$/"; http.user_agent; content:"iPhone"; classtype:policy-violation; sid:1000105; rev:1; metadata:author Mihari_Threat_Research, created_at 2026_10_12, confidence Low;)

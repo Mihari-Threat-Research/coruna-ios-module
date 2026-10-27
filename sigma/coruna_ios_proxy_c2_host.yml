@@ -1,0 +1,20 @@
+title: Coruna iOS - Conexion al C2 token.info.pl (proxy)
+id: 4f1c6a2e-8b3d-4e7a-9c55-1d2e3f4a5b61
+status: experimental
+description: Detecta trafico web hacia la infraestructura C2 observada en la configuracion de carga del modulo Coruna para iOS (c2.token.info.pl).
+references:
+    - https://mihari-intelligence.blogspot.com/2026/10/desmontando-coruna-analisis-modulo-exploit-ios-bypass-pac.html
+author: Mihari Threat Research
+date: 2026-10-12
+tags:
+    - attack.command-and-control
+    - attack.t1071.001
+logsource:
+    category: proxy
+detection:
+    selection:
+        cs-host|endswith: 'token.info.pl'
+    condition: selection
+falsepositives:
+    - Ninguno conocido. Verificar con DNS pasivo antes de bloquear en produccion.
+level: high
